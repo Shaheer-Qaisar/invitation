@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5efe6" />
+    <title>Engagement Ceremony — Abdullah & Hira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+  <div class="intro" id="intro" aria-hidden="false">
+      <div class="envelope-scene">
+        <div class="envelope" id="envelope">
+          <div class="envelope__back"></div>
+          <div class="envelope__flap"></div>
+          <div class="envelope__pocket"></div>
+          <div class="envelope__card-preview"></div>
+        </div>
+        <p class="intro__hint" id="introHint">Opening your invitation…</p>
+      </div>
+    </div>
+
+    <main class="scroll-container" id="mainContent" hidden>
+      <section class="panel panel--invite" id="invitePanel">
+        <article class="invite-card" role="article" aria-label="Engagement invitation">
+          <div class="invite-card__ornament invite-card__ornament--top"></div>
+          <p class="invite-card__bismillah" dir="rtl" lang="ar">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+          <p class="invite-card__bismillah-trans">In the name of Allah, the Most Gracious, the Most Merciful</p>
+
+          <p class="invite-card__lead">You are invited at the engagement ceremony of</p>
+
+          <h1 class="invite-card__names">
+            <span class="name name--first">Abdullah Qaisar</span>
+            <span class="name-divider" aria-hidden="true">&</span>
+            <span class="name name--second">Hira Tanveer</span>
+          </h1>
+
+          <div class="invite-card__details">
+            <p class="detail detail--day">Saturday</p>
+            <p class="detail detail--date">28 November 2026</p>
+            <p class="detail detail--time">7:00 PM</p>
+          </div>
+
+          <div class="invite-card__footer-ornament" aria-hidden="true"></div>
+        </article>
+
+        <button type="button" class="scroll-cta" id="scrollToVenue" aria-label="Scroll to venue">
+          <span class="scroll-cta__label">Venue</span>
+          <span class="scroll-cta__chevron" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 5v12M12 17l5-5M12 17l-5-5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+      </section>
+
+      <section class="panel panel--venue" id="venuePanel">
+        <div class="venue">
+          <p class="venue__eyebrow">We gather at</p>
+          <h2 class="venue__name" id="venueName">—</h2>
+          <p class="venue__address" id="venueAddress">—</p>
+
+          <button type="button" class="venue__map-btn" id="openMaps" aria-label="Open location in maps">
+            <div class="venue__map-preview" id="mapPreview">
+              <iframe
+                id="mapEmbed"
+                title="Venue location map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <span class="venue__map-overlay">
+                <span class="venue__map-cta">Tap to open in Maps</span>
+              </span>
+            </div>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
