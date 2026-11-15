@@ -174,13 +174,16 @@ body {
   padding-top: 2.5rem;
 }
 
-/* —— Reference-art invitation card (~70vh) —— */
+/* —— Built invitation card (~70vh) —— */
 .invite-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   height: var(--card-height);
   width: calc(var(--card-height) * var(--card-aspect));
   max-width: min(92vw, 420px);
   margin: 0 auto;
+  background: #ebeceb;
   border-radius: 2px;
   box-shadow: 0 14px 42px var(--shadow-deep);
   overflow: hidden;
@@ -198,118 +201,117 @@ body {
   }
 }
 
-.invite-card__art {
+.invite-card__decor {
   position: absolute;
   inset: 0;
-  background-color: var(--card-paper);
-  background-image: url("assets/invite-base.png");
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.invite-card__content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.invite-card__mask {
-  position: absolute;
+  pointer-events: none;
   z-index: 1;
-  background: var(--card-paper);
-  opacity: 0.97;
-  border-radius: 1px;
 }
 
-.invite-card__mask--lead {
-  top: 20%;
-  left: 5%;
-  width: 90%;
-  height: 8.5%;
+.invite-card__frame {
+  position: absolute;
+  top: 6%;
+  left: 7%;
+  width: 86%;
+  height: 88%;
+  object-fit: fill;
 }
 
-.invite-card__mask--names {
-  top: 35.5%;
-  left: 3%;
-  width: 94%;
-  height: 26%;
+.invite-card__leaf {
+  position: absolute;
+  object-fit: contain;
 }
 
-.invite-card__mask--meta {
-  bottom: 8.5%;
-  right: 3%;
-  width: 62%;
-  height: 19%;
+.invite-card__leaf--top {
+  top: 2%;
+  left: -3%;
+  width: 58%;
+  max-height: 22%;
+}
+
+.invite-card__leaf--bottom {
+  right: -4%;
+  bottom: 14%;
+  width: 50%;
+  max-height: 18%;
+}
+
+.invite-card__rose {
+  position: absolute;
+  left: 0;
+  bottom: 6%;
+  width: 46%;
+  max-height: 32%;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+.invite-card__body {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 21% 13% 16%;
+  min-height: 100%;
 }
 
 .invite-card__lead {
-  position: absolute;
-  top: 20.6%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 84%;
-  margin: 0;
+  margin: 0 auto 0.5rem;
+  max-width: 17.5rem;
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: clamp(0.68rem, 2.85vw, 0.84rem);
-  line-height: 1.5;
+  font-size: clamp(0.72rem, 3vw, 0.86rem);
+  line-height: 1.55;
   color: var(--ink);
   text-align: center;
-  z-index: 3;
 }
 
 .invite-card__names {
-  position: absolute;
-  top: 37.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  margin: 0;
-  z-index: 3;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0.25rem 0 0.75rem;
 }
 
 .name {
   font-family: var(--font-script);
-  font-size: clamp(1.65rem, 7.2vw, 2.35rem);
+  font-size: clamp(1.85rem, 8vw, 2.55rem);
   font-weight: 400;
   color: #1a1a1a;
-  line-height: 1.08;
+  line-height: 1.05;
   text-align: center;
 }
 
 .name-divider {
   font-family: var(--font-script);
-  font-size: clamp(1.1rem, 4.8vw, 1.45rem);
+  font-size: clamp(1.15rem, 5vw, 1.5rem);
   color: #1a1a1a;
-  margin: 0.05rem 0;
   line-height: 1;
 }
 
 .invite-card__meta {
-  position: absolute;
-  bottom: 10.2%;
-  right: 8%;
-  width: 56%;
+  margin-top: auto;
+  align-self: flex-end;
+  max-width: 62%;
   text-align: right;
-  z-index: 3;
 }
 
 .meta-line {
-  margin: 0 0 0.28rem;
+  margin: 0 0 0.3rem;
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: clamp(0.64rem, 2.75vw, 0.78rem);
-  line-height: 1.38;
+  font-size: clamp(0.66rem, 2.8vw, 0.8rem);
+  line-height: 1.4;
   color: var(--ink);
 }
 
 .meta-line--venue {
-  margin-top: 0.42rem;
+  margin-top: 0.45rem;
 }
 
 /* —— Scroll CTA —— */
@@ -427,10 +429,6 @@ body {
 @media (max-height: 640px) {
   :root {
     --card-height: 68vh;
-  }
-
-  .invite-card__mask--lead {
-    height: 9%;
   }
 
   .name {
