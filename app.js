@@ -14,6 +14,9 @@
 
   venueName.textContent = config.name;
 
+  const cardVenue = document.getElementById("cardVenue");
+  if (cardVenue) cardVenue.textContent = config.name;
+
   const query = encodeURIComponent(`${config.lat},${config.lng}`);
   mapEmbed.src = `https://maps.google.com/maps?q=${query}&z=15&output=embed`;
 
