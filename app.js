@@ -9,12 +9,10 @@
   const scrollToVenue = document.getElementById("scrollToVenue");
   const venuePanel = document.getElementById("venuePanel");
   const venueName = document.getElementById("venueName");
-  const venueAddress = document.getElementById("venueAddress");
   const mapEmbed = document.getElementById("mapEmbed");
   const openMaps = document.getElementById("openMaps");
 
   venueName.textContent = config.name;
-  venueAddress.textContent = config.address;
 
   const query = encodeURIComponent(`${config.lat},${config.lng}`);
   mapEmbed.src = `https://maps.google.com/maps?q=${query}&z=15&output=embed`;
